@@ -1,0 +1,171 @@
+.card-reloj.arena-theme {
+  background: linear-gradient(145deg, #241d19, #171210);
+  border-radius: 24px;
+  padding: 2rem;
+  width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  border: 1px solid #332721;
+}
+
+.arena-container {
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #110e0c;
+  border-radius: 16px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px 0;
+  box-shadow: inset 0 10px 30px rgba(0,0,0,0.9);
+  overflow: hidden;
+}
+
+
+.base-madera-3d {
+  width: 170px;
+  height: 22px;
+  background: linear-gradient(to bottom, #6a3b19 0%, #46250e 40%, #241105 100%);
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+.base-madera-3d.top {
+  border-radius: 12px 12px 4px 4px;
+}
+
+.base-madera-3d.bottom {
+  border-radius: 4px 4px 12px 12px;
+  background: linear-gradient(to top, #6a3b19 0%, #46250e 40%, #241105 100%);
+}
+
+.base-madera-3d .moldura {
+  position: absolute;
+  width: 150px;
+  height: 6px;
+  background: #804a22;
+  left: 10px;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
+}
+
+.base-madera-3d.top .moldura { bottom: -4px; border-radius: 0 0 4px 4px; }
+.base-madera-3d.bottom .moldura { top: -4px; border-radius: 4px 4px 0 0; }
+
+
+.pilar {
+  position: absolute;
+  width: 10px;
+  height: 84%;
+  top: 8%;
+  background: linear-gradient(to right, #241105, #552f14 30%, #7d4720 60%, #1a0b03 100%);
+  border-radius: 4px;
+  z-index: 4;
+  box-shadow: 3px 0 6px rgba(0,0,0,0.4);
+}
+.pilar-izq { left: 45px; transform: scaleX(0.9); opacity: 0.8; }
+.pilar-centro { left: 35px; top: 10%; height: 80%; z-index: 1; opacity: 0.4; }
+.pilar-der { right: 45px; transform: scaleX(0.9); opacity: 0.8; }
+
+
+.ampolleta-cristal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  margin: -5px 0;
+}
+
+
+.bulbo-clasico {
+  width: 110px;
+  height: 130px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(0.5px);
+}
+
+
+.bulbo-clasico.top {
+  clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 35% 100%);
+  border-radius: 40px 40px 0 0;
+}
+
+.bulbo-clasico.bottom {
+  clip-path: polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 0 40px 40px;
+}
+
+
+.arena-masa {
+  background: linear-gradient(to right, #cca06e 0%, #e2b98a 50%, #b58957 100%);
+  width: 100%;
+  position: absolute;
+}
+
+.arena-masa.top-fill {
+  height: 100%;
+  bottom: 0;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-out;
+}
+
+.arena-masa.bottom-fill {
+  bottom: 0;
+  width: 100%;
+  transition: height 0.2s ease-out;
+}
+
+
+.cuello-union {
+  width: 24px;
+  height: 8px;
+  background: linear-gradient(to right, #443410, #a1823b, #332609);
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+
+.hilo-caida {
+  width: 2.5px;
+  height: 100%;
+  background: #e2b98a;
+  margin: 0 auto;
+  opacity: 0;
+}
+.hilo-caida.fluyendo {
+  opacity: 0.95;
+  animation: flujoConstante 0.1s infinite linear;
+}
+
+@keyframes flujoConstante {
+  0%, 100% { transform: scaleX(0.9); opacity: 0.8; }
+  50% { transform: scaleX(1.1); opacity: 1; }
+}
+
+
+.cono-acumulacion {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 35px solid #e2b98a;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 35px);
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-out;
+  z-index: 2;
+  filter: drop-shadow(0 -2px 3px rgba(0,0,0,0.2));
+}
+
+.status-text {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  margin: 0;
+}

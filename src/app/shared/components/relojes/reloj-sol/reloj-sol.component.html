@@ -1,0 +1,31 @@
+<div class="card-reloj sol-theme">
+  <div class="card-header">
+    <span class="epoca">Edad Antigua (~3500 a.C.)</span>
+    <h3>El Gnomon de Piedra</h3>
+  </div>
+  
+  <div class="gnomon-container" [class.noche]="esDeNoche">
+    <div class="plato-sol">
+      <div class="marca-num m-6am">VI</div>
+      <div class="marca-num m-9am">IX</div>
+      <div class="marca-num m-12">XII</div>
+      <div class="marca-num m-3pm">III</div>
+      <div class="marca-num m-6pm">VI</div>
+      
+      <div class="linea-guia l-1"></div>
+      <div class="linea-guia l-2"></div>
+      <div class="linea-guia l-3"></div>
+      
+      <div class="sombra" [ngStyle]="{'transform': 'rotate(' + anguloSombra + 'deg)'}"></div>
+      
+      <div class="gnomon-fisico"></div>
+      <div class="estaca-centro"></div>
+    </div>
+  </div>
+  
+  <div class="card-footer">
+    <p class="status-text">
+      {{ esDeNoche ? '🌙 El sol se ha ocultado. El gnomon no proyecta sombra.' : '☀️ Ángulo solar: ' + anguloSombra.toFixed(1) + '°' }}
+    </p>
+  </div>
+</div>

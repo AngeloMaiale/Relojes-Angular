@@ -1,0 +1,120 @@
+.card-reloj.agua-theme {
+  background: linear-gradient(145deg, #1b222c, #11161d);
+  border-radius: 24px;
+  padding: 2rem;
+  width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  border: 1px solid #232e3d;
+}
+
+.clepsidra-container {
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: radial-gradient(circle at center, #181f2a, #0d1117);
+  padding: 20px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: inset 0 10px 30px rgba(0,0,0,0.7);
+}
+
+
+.soporte-metalico {
+  position: absolute;
+  width: 6px;
+  height: 90%;
+  top: 5%;
+  background: linear-gradient(to right, #8a6d3b, #d4b373, #5c4620);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+.soporte-metalico.izquierdo { left: 40px; }
+.soporte-metalico.derecho { right: 40px; }
+
+
+.vaso-cristal {
+  width: 90px;
+  height: 95px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4), inset 0 0 15px rgba(255,255,255,0.1);
+  backdrop-filter: blur(1px);
+  z-index: 2;
+}
+
+.vaso-cristal.superior {
+  border-radius: 4px 4px 45px 45px;
+}
+
+.vaso-cristal.inferior {
+  border-radius: 45px 45px 4px 4px;
+}
+
+
+.agua-fluida {
+  background: linear-gradient(to top, #1a73e8 0%, #00f2fe 100%);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transition: height 0.4s cubic-bezier(0.1, 0.8, 0.3, 1);
+  box-shadow: inset 0 4px 10px rgba(255,255,255,0.4);
+}
+
+.brillo-agua {
+  position: absolute;
+  top: 0; left: 10%; width: 20%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0.25), transparent);
+}
+
+
+.chorro-flujo {
+  width: 3px;
+  height: 110px;
+  background: linear-gradient(to bottom, #00f2fe, #1a73e8);
+  opacity: 0;
+  position: relative;
+  transition: opacity 0.3s;
+}
+
+.chorro-flujo.activo {
+  opacity: 0.85;
+  animation: vibrarChorro 0.1s infinite linear;
+}
+
+@keyframes vibrarChorro {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.3) translateX(0.5px); }
+}
+
+
+.olas-superficie {
+  position: absolute;
+  top: -4px; width: 200%; height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 40%;
+  animation: oleaje 2s infinite linear;
+}
+
+@keyframes oleaje {
+  0% { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+
+.escala-medida {
+  position: absolute;
+  right: 8px;
+  top: 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  height: 70%;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: bold;
+}

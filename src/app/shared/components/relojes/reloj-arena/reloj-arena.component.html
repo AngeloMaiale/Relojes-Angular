@@ -1,0 +1,39 @@
+<div class="card-reloj arena-theme">
+  <div class="card-header">
+    <span class="epoca">Edad Media (~Siglo VIII)</span>
+    <h3>Ampolleta Clásica</h3>
+  </div>
+
+  <div class="arena-container">
+    <div class="base-madera-3d top">
+      <div class="moldura"></div>
+    </div>
+
+    <div class="pilar pilar-izq"></div>
+    <div class="pilar pilar-centro"></div>
+    <div class="pilar pilar-der"></div>
+
+    <div class="ampolleta-cristal">
+      <div class="bulbo-clasico top">
+        <div class="arena-masa top-fill" [ngStyle]="{'transform': 'scaleY(' + (60 - minutosActuales)/60 + ')'}"></div>
+      </div>
+      
+      <div class="cuello-union">
+        <div class="hilo-caida" [class.fluyendo]="minutosActuales < 59"></div>
+      </div>
+      
+      <div class="bulbo-clasico bottom">
+        <div class="cono-acumulacion" [ngStyle]="{'transform': 'scale(' + (minutosActuales / 60) + ')'}"></div>
+        <div class="arena-masa bottom-fill" [ngStyle]="{'height': (minutosActuales / 60 * 100) + '%'}"></div>
+      </div>
+    </div>
+
+    <div class="base-madera-3d bottom">
+      <div class="moldura"></div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <p class="status-text">Ciclo de la hora: Hora + {{ minutosActuales }} min</p>
+  </div>
+</div>

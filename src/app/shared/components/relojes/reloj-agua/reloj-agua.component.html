@@ -1,0 +1,38 @@
+<div class="card-reloj agua-theme">
+  <div class="card-header">
+    <span class="epoca">Imperio Egipcio / Griego (~1400 a.C.)</span>
+    <h3>Clepsidra de Precisión</h3>
+  </div>
+
+  <div class="clepsidra-container">
+    <div class="soporte-metalico izquierdo"></div>
+    <div class="soporte-metalico derecho"></div>
+
+    <div class="vaso-cristal superior">
+      <div class="agua-fluida" [ngStyle]="{'height': (100 - porcentajeDia) + '%'}">
+        <div class="brillo-agua"></div>
+      </div>
+    </div>
+
+    <div class="chorro-flujo" [class.activo]="porcentajeDia < 100">
+      <div class="gotas-salpique"></div>
+    </div>
+
+    <div class="vaso-cristal inferior">
+      <div class="agua-fluida" [ngStyle]="{'height': porcentajeDia + '%'}">
+        <div class="olas-superficie"></div>
+        <div class="brillo-agua"></div>
+      </div>
+      <div class="escala-medida">
+        <span>- I</span>
+        <span>- II</span>
+        <span>- III</span>
+        <span>- IV</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <p class="status-text">Presión Hidráulica: {{ (100 - porcentajeDia).toFixed(0) }}% restante</p>
+  </div>
+</div>

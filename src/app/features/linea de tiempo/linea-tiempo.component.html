@@ -1,0 +1,24 @@
+<div class="dashboard-container">
+  <header>
+    <h1>Línea de Tiempo Histórica de Relojes</h1>
+    <p>Usa el slider para viajar en el tiempo a lo largo del día</p>
+    
+    <div class="slider-box">
+      <span class="time-display">{{ horaGlobal | date:'HH:mm' }}</span>
+      <input 
+        type="range" 
+        min="0" 
+        max="1439" 
+        [(ngModel)]="minutosDelDia" 
+        (input)="$event.target && actualizarHora()" 
+        class="time-slider"
+      />
+    </div>
+  </header>
+
+  <main class="timeline">
+    <app-reloj-sol [hora]="horaGlobal"></app-reloj-sol>
+    <app-reloj-agua [hora]="horaGlobal"></app-reloj-agua>
+    <app-reloj-arena [hora]="horaGlobal"></app-reloj-arena>
+  </main>
+</div>
