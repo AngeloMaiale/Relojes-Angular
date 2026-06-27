@@ -1,0 +1,25 @@
+<div class="card-reloj vela-theme">
+  <div class="card-header">
+    <span class="epoca">Edad Media (~Siglo IX)</span>
+    <h3>Reloj de Vela Graduado</h3>
+  </div>
+  <div class="vela-container">
+    <div class="escala-marcas">
+      <div class="marca">I <span class="linea"></span></div>
+      <div class="marca">II <span class="linea"></span></div>
+      <div class="marca">III <span class="linea"></span></div>
+      <div class="marca">IV <span class="linea"></span></div>
+    </div>
+    
+    <div class="candelabro-base">
+      <div class="cuerpo-vela" [ngStyle]="{'height': (180 - (hora.getMinutes() * 2.5)) + 'px'}">
+        <div class="pabilo"></div>
+        <div class="fuego"></div>
+        <div class="lágrima-cera"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <p class="status-text">Consumo Térmico Regularizado</p>
+  </div>
+</div>

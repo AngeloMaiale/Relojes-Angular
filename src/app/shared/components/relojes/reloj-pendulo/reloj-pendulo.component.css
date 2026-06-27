@@ -1,0 +1,38 @@
+.card-reloj.pendulo-theme {
+  background: linear-gradient(145deg, #2b1a0f, #1a0f08);
+  border-radius: 24px; padding: 2rem; width: 420px; text-align: center; border: 1px solid #3d2516;
+}
+.reloj-mecanico-body {
+  height: 380px; background: linear-gradient(to bottom, #190e06, #090502); border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center; padding-top: 20px; box-shadow: inset 0 0 25px #000;
+}
+.esfera-blanca {
+  width: 140px; height: 140px; background: #fdfbf7; border-radius: 50%;
+  border: 6px solid #b38728; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.aguja {
+  position: absolute; bottom: 50%; left: calc(50% - 2px); width: 4px;
+  background: #111; transform-origin: bottom center; border-radius: 4px;
+}
+.aguja.hora { height: 35px; width: 5px; }
+.aguja.minuto { height: 52px; width: 3px; background: #333; }
+.centro-perno {
+  position: absolute; top: 50%; left: 50%; width: 10px; height: 10px;
+  background: #b38728; border-radius: 50%; transform: translate(-50%, -50%);
+}
+
+.caja-oscilacion {
+  width: 80px; height: 180px; position: relative; margin-top: 15px;
+  border-top: 2px solid #332115; overflow: hidden;
+}
+.pendulo-brazo {
+  width: 3px; height: 130px; background: #b38728; margin: 0 auto;
+  transform-origin: top center; transform: rotate(12deg);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Simula la gravedad */
+}
+.pendulo-brazo.izquierda { transform: rotate(-12deg); }
+.lenteja-oro {
+  width: 34px; height: 34px; background: radial-gradient(circle, #fcf6ba, #aa771c);
+  border-radius: 50%; position: absolute; bottom: -15px; left: -16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}

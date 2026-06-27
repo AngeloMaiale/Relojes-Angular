@@ -1,9 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+// Importación de los 6 relojes históricos
 import { RelojSolComponent } from './shared/components/relojes/reloj-sol/reloj-sol.component';
 import { RelojAguaComponent } from './shared/components/relojes/reloj-agua/reloj-agua.component';
 import { RelojArenaComponent } from './shared/components/relojes/reloj-arena/reloj-arena.component';
+import { RelojVelaComponent } from './shared/components/relojes/reloj-vela/reloj-vela.component';
+import { RelojPenduloComponent } from './shared/components/relojes/reloj-pendulo/reloj-pendulo.component';
+import { RelojCuarzoComponent } from './shared/components/relojes/reloj-cuarzo/reloj-cuarzo.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +18,10 @@ import { RelojArenaComponent } from './shared/components/relojes/reloj-arena/rel
     FormsModule, 
     RelojSolComponent, 
     RelojAguaComponent, 
-    RelojArenaComponent
+    RelojArenaComponent,
+    RelojVelaComponent,
+    RelojPenduloComponent,
+    RelojCuarzoComponent
   ],
   template: `
     <div class="dashboard-container">
@@ -43,15 +51,12 @@ import { RelojArenaComponent } from './shared/components/relojes/reloj-arena/rel
         </div>
 
         <div class="selector-relojes">
-          <button [class.active]="relojSeleccionado === 'sol'" (click)="relojSeleccionado = 'sol'">
-            ☀️ 1. Reloj de Sol
-          </button>
-          <button [class.active]="relojSeleccionado === 'agua'" (click)="relojSeleccionado = 'agua'">
-            💧 2. Clepsidra (Agua)
-          </button>
-          <button [class.active]="relojSeleccionado === 'arena'" (click)="relojSeleccionado = 'arena'">
-            ⏳ 3. Reloj de Arena
-          </button>
+          <button [class.active]="relojSeleccionado === 'sol'" (click)="seleccionarReloj('sol')">☀️ 1. Sol</button>
+          <button [class.active]="relojSeleccionado === 'agua'" (click)="seleccionarReloj('agua')">💧 2. Agua</button>
+          <button [class.active]="relojSeleccionado === 'arena'" (click)="seleccionarReloj('arena')">⏳ 3. Arena</button>
+          <button [class.active]="relojSeleccionado === 'vela'" (click)="seleccionarReloj('vela')">🕯️ 4. Vela</button>
+          <button [class.active]="relojSeleccionado === 'pendulo'" (click)="seleccionarReloj('pendulo')">⚙️ 5. Péndulo</button>
+          <button [class.active]="relojSeleccionado === 'cuarzo'" (click)="seleccionarReloj('cuarzo')">📟 6. Cuarzo</button>
         </div>
       </header>
 
@@ -59,6 +64,9 @@ import { RelojArenaComponent } from './shared/components/relojes/reloj-arena/rel
         <app-reloj-sol   *ngIf="relojSeleccionado === 'sol'"   [hora]="horaGlobal"></app-reloj-sol>
         <app-reloj-agua  *ngIf="relojSeleccionado === 'agua'"  [hora]="horaGlobal"></app-reloj-agua>
         <app-reloj-arena *ngIf="relojSeleccionado === 'arena'" [hora]="horaGlobal"></app-reloj-arena>
+        <app-reloj-vela    *ngIf="relojSeleccionado === 'vela'"    [hora]="horaGlobal"></app-reloj-vela>
+        <app-reloj-pendulo *ngIf="relojSeleccionado === 'pendulo'" [hora]="horaGlobal"></app-reloj-pendulo>
+        <app-reloj-cuarzo  *ngIf="relojSeleccionado === 'cuarzo'"  [hora]="horaGlobal"></app-reloj-cuarzo>
       </main>
     </div>
   `,
@@ -86,22 +94,11 @@ import { RelojArenaComponent } from './shared/components/relojes/reloj-arena/rel
     }
     .time-display { font-size: 2.8rem; font-family: monospace; font-weight: bold; color: #ffd700; display: block; margin-bottom: 1rem; }
     
-    .control-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    .control-row { display: flex; align-items: center; gap: 1rem; }
 
     .btn-play {
-      background: #2e7d32;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      white-space: nowrap;
-      transition: background 0.2s;
+      background: #2e7d32; color: white; border: none; padding: 0.6rem 1rem;
+      border-radius: 6px; cursor: pointer; font-weight: bold; white-space: nowrap; transition: background 0.2s;
     }
     .btn-play:hover { background: #388e3c; }
     .btn-play.playing { background: #c62828; }
@@ -112,10 +109,10 @@ import { RelojArenaComponent } from './shared/components/relojes/reloj-arena/rel
     
     .alert-text { color: #aaa; display: block; margin-top: 0.5rem; font-style: italic; }
 
-    .selector-relojes { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
-    .selector-relojes button { background: #2a2a2a; color: #fff; border: 1px solid #444; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-size: 1rem; transition: all 0.3s ease; }
+    .selector-relojes { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .selector-relojes button { background: #2a2a2a; color: #fff; border: 1px solid #444; padding: 0.6rem 1.2rem; border-radius: 25px; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease; }
     .selector-relojes button.active { background: #ffd700; color: #121212; border-color: #ffd700; font-weight: bold; box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
-    .timeline-display { display: flex; justify-content: center; align-items: center; min-height: 380px; margin-top: 2rem; }
+    .timeline-display { display: flex; justify-content: center; align-items: center; min-height: 400px; margin-top: 2rem; }
   `]
 })
 export class AppComponent implements OnInit, OnDestroy {
@@ -134,16 +131,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.detenerTemporizador();
   }
 
-  
   usuarioMueveSlider() {
     const nuevaFecha = new Date();
     const horas = Math.floor(this.minutosDelDia / 60);
     const minutos = this.minutosDelDia % 60;
-    nuevaFecha.setHours(horas, minutos, 0, 0); 
+    nuevaFecha.setHours(horas, minutos, 0, 0);
     this.horaGlobal = nuevaFecha;
   }
 
-  
   toggleTiempoReal() {
     this.enTiempoReal = !this.enTiempoReal;
     if (this.enTiempoReal) {
@@ -155,9 +150,12 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
+  seleccionarReloj(tipo: string) {
+    this.relojSeleccionado = tipo;
+  }
+
   private sincronizarConFecha(fecha: Date) {
     this.horaGlobal = fecha;
-    
     this.minutosDelDia = (fecha.getHours() * 60) + fecha.getMinutes();
   }
 
