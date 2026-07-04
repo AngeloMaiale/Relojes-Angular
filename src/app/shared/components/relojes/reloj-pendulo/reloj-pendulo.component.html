@@ -1,7 +1,7 @@
 <div class="card-reloj pendulo-theme">
   <div class="card-header">
     <span class="epoca">Revolución Científica (~1656)</span>
-    <h3>Reloj de Péndulo de Galileo</h3>
+    <h3>Reloj de Péndulo Clásico</h3>
   </div>
   <div class="reloj-mecanico-body">
     <div class="esfera-blanca">
@@ -11,12 +11,13 @@
     </div>
     
     <div class="caja-oscilacion">
-      <div class="pendulo-brazo" [class.izquierda]="hora.getSeconds() % 2 === 0">
+      <div class="pendulo-brazo" 
+           [ngStyle]="{'--rotation': (12 * Math.sin(hora.getTime() / 200)) + 'deg'}">
         <div class="lenteja-oro"></div>
       </div>
     </div>
   </div>
   <div class="card-footer">
-    <p class="status-text">Escape de áncora sincronizado</p>
+    <p class="status-text">Mecánica de escape sincronizada</p>
   </div>
 </div>

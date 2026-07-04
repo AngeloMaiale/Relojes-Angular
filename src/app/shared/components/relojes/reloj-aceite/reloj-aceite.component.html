@@ -1,0 +1,16 @@
+<div class="card-reloj aceite-theme">
+  <div class="card-header">
+    <span class="epoca">Europa Renacentista (~Siglo XVI)</span>
+    <h3>Lámpara de Aceite Graduada</h3>
+  </div>
+  <div class="lampara-container">
+    <div class="tubo-vidrio">
+      <div class="liquido-aceite" [ngStyle]="{'height': (100 - (hora.getMinutes() * 1.3)) + '%'}"></div>
+      <div class="escala-numerica"><span>15</span><span>30</span><span>45</span><span>60</span></div>
+    </div>
+    <div class="quemador-metal">
+      <div class="mecha"><div class="fuego-lento"></div></div>
+    </div>
+  </div>
+  <div class="card-footer"><p class="status-text">Fluido hidrodinámico consumible</p></div>
+</div>

@@ -1,0 +1,26 @@
+<div class="card-reloj atomico-theme">
+  <div class="card-header">
+    <span class="epoca">Estándar SI Internacional (~1967)</span>
+    <h3>Reloj de Haz de Cesio-133</h3>
+  </div>
+  <div class="camara-vacio">
+    <div class="laser-haz"></div>
+    
+    <div class="pantalla-cuantica">
+      <div class="time-digital">{{ hora | date:'HH:mm:ss' }}</div>
+      <div class="nanosegundos">⚡ +{{ (hora.getMilliseconds() * 9192631.77) | number:'1.0-0' }} OSC/MS</div>
+    </div>
+    
+    <div class="nucleo-cesio">
+      <div class="electron-quantum e1" 
+           [ngStyle]="{'transform': 'rotate(' + (hora.getTime() * 0.15) + 'deg) translateX(45px)'}">
+      </div>
+      <div class="electron-quantum e2" 
+           [ngStyle]="{'transform': 'rotate(' + (hora.getTime() * -0.25) + 'deg) translateX(65px)'}">
+      </div>
+    </div>
+    
+    <div class="frecuencia-display">🎯 Resonancia: 9,192,631,770 Hz</div>
+  </div>
+  <div class="card-footer"><p class="status-text">Frecuencia controlada por transición de energía</p></div>
+</div>

@@ -1,0 +1,109 @@
+/* Tarjeta contenedora con estética cuántica de laboratorio */
+.card-reloj.atomico-theme { 
+  background: linear-gradient(145deg, #0d1117, #161b22); 
+  border: 1px solid #30363d; 
+  border-radius: 24px; 
+  padding: 2rem; 
+  width: 420px; 
+  text-align: center; 
+  box-sizing: border-box;
+}
+
+/* Cámara de vacío (Contenedor interno ampliado para dar espacio) */
+.camara-vacio { 
+  height: 320px; /* <-- Incrementado de 280px a 320px */
+  background: #010409; 
+  border-radius: 12px; 
+  position: relative; 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  border: 2px solid #2f363d; 
+}
+
+/* Pantalla LCD superior del Laboratorio (Fija arriba) */
+.pantalla-cuantica {
+  position: absolute;
+  top: 15px;
+  background: rgba(0, 242, 254, 0.03);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.1);
+  z-index: 10;
+}
+
+.time-digital {
+  font-size: 1.5rem;
+  color: #00f2fe;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+}
+
+.nanosegundos {
+  font-size: 0.75rem;
+  color: #a6e22e;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+/* Núcleo de Cesio-133 desplazado hacia abajo para evitar colisiones */
+.nucleo-cesio { 
+  width: 32px; 
+  height: 32px; 
+  background: #ff5555; 
+  border-radius: 50%; 
+  position: absolute; 
+  top: 185px; /* <-- Bajado estratégicamente para librar la pantalla */
+  left: calc(50% - 16px); /* Centrado horizontal perfecto */
+  box-shadow: 0 0 25px #ff5555; 
+  z-index: 2; 
+}
+
+/* Línea estática del láser alineada milimétricamente con la nueva posición del núcleo */
+.laser-haz { 
+  width: 100%; 
+  height: 2px; 
+  background: #58a6ff; 
+  position: absolute; 
+  top: 201px; /* <-- Ajustado para cortar el núcleo exactamente por la mitad (185px + 16px) */
+  transform: translateY(-50%); 
+  box-shadow: 0 0 10px #58a6ff; 
+  opacity: 0.5;
+}
+
+/* Esferas de los Electrones Cuánticos */
+.electron-quantum { 
+  width: 10px; 
+  height: 10px; 
+  background: #00f2fe; 
+  border-radius: 50%; 
+  position: absolute; 
+  top: 11px; /* Centrado respecto al núcleo de 32px (32/2 - 10/2) */
+  left: 11px; 
+  box-shadow: 0 0 12px #00f2fe, 0 0 4px #fff; 
+  transform-origin: center;
+}
+
+/* Indicadores de frecuencia inferiores (Fijos abajo de la cámara) */
+.frecuencia-display { 
+  position: absolute;
+  bottom: 15px;
+  font-family: monospace; 
+  color: #58a6ff; 
+  font-weight: bold; 
+  font-size: 1rem; 
+  text-shadow: 0 0 8px rgba(88,166,255,0.4); 
+  z-index: 5; 
+}
+
+.status-text { 
+  color: #8b949e; 
+  font-size: 0.85rem; 
+  margin: 0;
+  margin-top: 1rem;
+}

@@ -10,4 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class RelojPenduloComponent {
   @Input() hora!: Date;
+  
+  // Exponemos Math al HTML para el cálculo trigonométrico del vaivén
+  protected readonly Math = Math; 
 }
