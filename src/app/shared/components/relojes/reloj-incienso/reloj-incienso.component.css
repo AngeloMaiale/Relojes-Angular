@@ -1,7 +1,31 @@
-.card-reloj.incienso-theme { background: linear-gradient(145deg, #2c1a1a, #1c1010); border: 1px solid #4a2c2c; border-radius: 24px; padding: 2rem; width: 420px; text-align: center; }
-.altar-container { height: 260px; background: #0f0707; border-radius: 12px; padding: 40px 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; }
-.soporte-madera { width: 100%; height: 12px; background: #5a3825; border-radius: 4px; position: relative; display: flex; align-items: center; }
-/* Modificación para asegurar posicionamiento relativo exacto */
+.card-reloj.incienso-theme {
+  background: linear-gradient(145deg, #2c1a1a, #1c1010);
+  border: 1px solid #4a2c2c;
+  border-radius: 24px;
+  padding: 2rem;
+  width: 420px;
+  text-align: center;
+}
+.altar-container {
+  height: 260px;
+  background: #0f0707;
+  border-radius: 12px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.soporte-madera {
+  width: 100%;
+  height: 12px;
+  background: #5a3825;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .varilla-incienso {
   height: 6px;
   background: linear-gradient(to right, #444 0%, #8b7355 20%, #a68b6d 100%);
@@ -19,7 +43,9 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 12px #ff4500, 0 0 4px #fff;
+  box-shadow:
+    0 0 12px #ff4500,
+    0 0 4px #fff;
   transition: left 0.1s linear;
   z-index: 10;
 }
@@ -36,7 +62,32 @@
   animation: flotarHumo 1.5s infinite linear;
 }
 
-.cenizas { height: 4px; background: #444; position: absolute; left: 0; border-radius: 2px; }
-.marcas-oro { display: flex; justify-content: space-between; margin-top: 30px; color: #d4af37; font-family: serif; font-size: 0.85rem; }
-@keyframes flotarHumo { 0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.1; } 50% { transform: translateY(-10px) scaleX(1.5); opacity: 0.3; } }
-.status-text { color: #a68b6d; }
+.cenizas {
+  height: 4px;
+  background: #444;
+  position: absolute;
+  left: 0;
+  border-radius: 2px;
+}
+.marcas-oro {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  color: #d4af37;
+  font-family: serif;
+  font-size: 0.85rem;
+}
+@keyframes flotarHumo {
+  0%,
+  100% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-10px) scaleX(1.5);
+    opacity: 0.3;
+  }
+}
+.status-text {
+  color: #a68b6d;
+}

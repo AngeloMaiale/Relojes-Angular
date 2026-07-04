@@ -1,20 +1,130 @@
-.card-reloj.bolsillo-theme { background: linear-gradient(145deg, #1e241f, #111411); border: 1px solid #2e3830; border-radius: 24px; padding: 2rem; width: 420px; text-align: center; }
-.gabinete-oro { height: 260px; width: 260px; background: radial-gradient(circle, #ffeaa7 10%, #d4af37 60%, #aa771c 100%); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 12px 28px rgba(0,0,0,0.7); margin: 20px auto; position: relative; border: 6px double #8a640f; }
-.corona-pulsador { width: 30px; height: 20px; background: #d4af37; position: absolute; top: -18px; left: calc(50% - 15px); border-radius: 5px 5px 0 0; border: 2px solid #aa771c; }
-.esfera-porcelana { width: 210px; height: 210px; background: radial-gradient(circle, #ffffff 70%, #f4f1ea 100%); border-radius: 50%; border: 4px solid #111; position: relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.3); }
+.card-reloj.bolsillo-theme {
+  background: linear-gradient(145deg, #1e241f, #111411);
+  border: 1px solid #2e3830;
+  border-radius: 24px;
+  padding: 2rem;
+  width: 420px;
+  text-align: center;
+}
+.gabinete-oro {
+  height: 260px;
+  width: 260px;
+  background: radial-gradient(circle, #ffeaa7 10%, #d4af37 60%, #aa771c 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
+  margin: 20px auto;
+  position: relative;
+  border: 6px double #8a640f;
+}
+.corona-pulsador {
+  width: 30px;
+  height: 20px;
+  background: #d4af37;
+  position: absolute;
+  top: -18px;
+  left: calc(50% - 15px);
+  border-radius: 5px 5px 0 0;
+  border: 2px solid #aa771c;
+}
+.esfera-porcelana {
+  width: 210px;
+  height: 210px;
+  background: radial-gradient(circle, #ffffff 70%, #f4f1ea 100%);
+  border-radius: 50%;
+  border: 4px solid #111;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
 
-.marca-romana { position: absolute; font-family: 'Times New Roman', serif; font-weight: bold; color: #222; font-size: 0.9rem; }
-.xii { top: 10px; left: 50%; transform: translateX(-50%); }
-.iii { right: 12px; top: 50%; transform: translateY(-50%); }
-.vi { bottom: 10px; left: 50%; transform: translateX(-50%); }
-.ix { left: 12px; top: 50%; transform: translateY(-50%); }
+.marca-romana {
+  position: absolute;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  color: #222;
+  font-size: 0.9rem;
+}
+.xii {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.iii {
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.vi {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ix {
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-.aguja-b { position: absolute; bottom: 50%; left: calc(50% - 2.5px); width: 5px; background: #111; transform-origin: bottom center; border-radius: 4px; }
-.aguja-b.hora { height: 55px; background: #c0392b; }
-.aguja-b.minuto { height: 85px; width: 3px; background: #2c3e50; }
+.aguja-b {
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - 2.5px);
+  width: 5px;
+  background: #111;
+  transform-origin: bottom center;
+  border-radius: 4px;
+}
+.aguja-b.hora {
+  height: 55px;
+  background: #c0392b;
+}
+.aguja-b.minuto {
+  height: 85px;
+  width: 3px;
+  background: #2c3e50;
+}
 
-.ventana-tourbillon { width: 55px; height: 55px; background: #222; border: 2px solid #aa771c; border-radius: 50%; position: absolute; top: 60%; left: calc(50% - 27.5px); overflow: hidden; box-shadow: inset 0 3px 8px #000; display: flex; justify-content: center; align-items: center; }
-.volante-oscilador.girando { width: 40px; height: 40px; border: 3px double #d4af37; border-radius: 50%; background: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(212,175,55,0.3) 5px, rgba(212,175,55,0.3) 10px); animation: tourbillonGiro 0.8s infinite linear; }
+.ventana-tourbillon {
+  width: 55px;
+  height: 55px;
+  background: #222;
+  border: 2px solid #aa771c;
+  border-radius: 50%;
+  position: absolute;
+  top: 60%;
+  left: calc(50% - 27.5px);
+  overflow: hidden;
+  box-shadow: inset 0 3px 8px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.volante-oscilador.girando {
+  width: 40px;
+  height: 40px;
+  border: 3px double #d4af37;
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    rgba(212, 175, 55, 0.3) 5px,
+    rgba(212, 175, 55, 0.3) 10px
+  );
+  animation: tourbillonGiro 0.8s infinite linear;
+}
 
-@keyframes tourbillonGiro { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-.status-text { color: #859a88; font-weight: 500; }
+@keyframes tourbillonGiro {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.status-text {
+  color: #859a88;
+  font-weight: 500;
+}
