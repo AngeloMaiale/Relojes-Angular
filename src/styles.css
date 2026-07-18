@@ -1,3 +1,183 @@
-/* You can add global styles to this file, and also import other style files */
+
 
 @import 'tailwindcss';
+
+
+.card-reloj {
+  width: 420px;
+  min-height: 500px;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--bg-card);
+  border: 3px solid var(--border-color);
+  font-family: var(--fuente-texto), sans-serif;
+}
+
+.card-reloj:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-header .epoca {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: var(--color-epoca);
+}
+
+.card-header h3 {
+  margin: 5px 0 0 0;
+  font-size: 1.5rem;
+  color: var(--color-titulo);
+  font-family: var(--fuente-titulo), serif;
+}
+
+.escenario-interno {
+  background: var(--bg-escenario);
+  border-radius: 12px;
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card-footer .status-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-footer);
+  font-style: italic;
+}
+
+
+
+
+.tema-solar {
+  --bg-card: #f0eae1;
+  --border-color: #d1c7bd;
+  --color-epoca: #8c7a6b;
+  --color-titulo: #4a3e3d;
+  --bg-escenario: #e6dfd3;
+  --color-footer: #6e6156;
+  --fuente-titulo: 'Times New Roman';
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+.tema-clepsidra {
+  --bg-card: #112224;
+  --border-color: #9c7c4b;
+  --color-epoca: #00bcd4;
+  --color-titulo: #e5c185;
+  --bg-escenario: #081314;
+  --color-footer: #62787a;
+  --fuente-titulo: 'Cinzel', 'Georgia';
+}
+
+
+.tema-incienso {
+  --bg-card: #1a1512;
+  --border-color: #4a3325;
+  --color-epoca: #ffaa66;
+  --color-titulo: #ffffff;
+  --bg-escenario: #0a0807;
+  --color-footer: #8a776a;
+  --fuente-titulo: 'Georgia';
+}
+
+
+.tema-vela {
+  --bg-card: #2c221e;
+  --border-color: #8c694a;
+  --color-epoca: #dfb15b;
+  --color-titulo: #f4ebd0;
+  --bg-escenario: #181210;
+  --color-footer: #a68a70;
+  --fuente-titulo: 'Courier New', monospace;
+}
+
+
+.tema-arena {
+  --bg-card: #361f14;
+  --border-color: #613b25;
+  --color-epoca: #d4a373;
+  --color-titulo: #fefae0;
+  --bg-escenario: #1f110a;
+  --color-footer: #94715b;
+  --fuente-titulo: 'Palatino', 'Georgia';
+}
+
+
+.tema-mecanico {
+  --bg-card: #242120;
+  --border-color: #876623;
+  --color-epoca: #b5b5b5;
+  --color-titulo: #d9ab42;
+  --bg-escenario: #141312;
+  --color-footer: #7d7573;
+  --fuente-titulo: 'Impact', 'Trebuchet MS';
+}
+
+
+.tema-pendulo {
+  --bg-card: #3a0d05;
+  --border-color: #d1b46a;
+  --color-epoca: #e0cfab;
+  --color-titulo: #ffffff;
+  --bg-escenario: #1f0501;
+  --color-footer: #a88a84;
+  --fuente-titulo: 'Garamond', 'Baskerville';
+}
+
+
+.tema-cronometro {
+  --bg-card: #1f1913;
+  --border-color: #c9933b;
+  --color-epoca: #e5a93b;
+  --color-titulo: #f2e3c6;
+  --bg-escenario: #120e0a;
+  --color-footer: #736150;
+  --fuente-titulo: 'Arial Black', sans-serif;
+}
+
+
+.tema-cuarzo {
+  --bg-card: #1e222b;
+  --border-color: #4e5563;
+  --color-epoca: #9ca3af;
+  --color-titulo: #00ff66;
+  --bg-escenario: #0f1115;
+  --color-footer: #6b7280;
+  --fuente-titulo: 'Courier New', monospace;
+}
+
+
+.tema-atomico {
+  --bg-card: #0b0d16;
+  --border-color: #00f0ff;
+  --color-epoca: #00f0ff;
+  --color-titulo: #ffffff;
+  --bg-escenario: #04050a;
+  --color-footer: #535f80;
+  --fuente-titulo: 'Trebuchet MS', sans-serif;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2), inset 0 0 15px rgba(0, 240, 255, 0.1);
+}

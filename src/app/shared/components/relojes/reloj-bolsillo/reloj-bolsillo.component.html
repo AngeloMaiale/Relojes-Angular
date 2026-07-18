@@ -1,23 +1,29 @@
-<div class="card-reloj bolsillo-theme">
+<div class="card-reloj tema-cronometro">
   <div class="card-header">
     <span class="epoca">Revolución Industrial (~Siglo XVIII)</span>
     <h3>Cronómetro de Volante y Espiral</h3>
   </div>
-  <div class="gabinete-oro">
-    <div class="corona-pulsador"></div>
-    <div class="esfera-porcelana">
-      <div class="marca-romana xii">XII</div>
-      <div class="marca-romana iii">III</div>
-      <div class="marca-romana vi">VI</div>
-      <div class="marca-romana ix">IX</div>
 
-      <div class="aguja-b hora" [ngStyle]="{'transform': 'rotate(' + (hora.getHours() * 30 + hora.getMinutes() * 0.5) + 'deg)'}"></div>
-      <div class="aguja-b minuto" [ngStyle]="{'transform': 'rotate(' + (hora.getMinutes() * 6) + 'deg)'}"></div>
-      
-      <div class="ventana-tourbillon">
-        <div class="volante-oscilador girando"></div>
+  <div class="escenario-interno">
+    <div class="gabinete-oro">
+      <div class="corona-pulsador"></div>
+      <div class="esfera-porcelana">
+        <div class="marca-romana xii">XII</div>
+        <div class="marca-romana iii">III</div>
+        <div class="marca-romana vi">VI</div>
+        <div class="marca-romana ix">IX</div>
+
+        <div class="aguja-b hora" [ngStyle]="{'transform': 'rotate(' + (hora.getHours() * 30 + hora.getMinutes() * 0.5) + 'deg)'}"></div>
+        <div class="aguja-b minuto" [ngStyle]="{'transform': 'rotate(' + (hora.getMinutes() * 6) + 'deg)'}"></div>
+        
+        <div class="ventana-tourbillon">
+          <div class="volante-oscilador girando"></div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="card-footer"><p class="status-text">Muelle de torsión micro-ajustado de alta gama</p></div>
+
+  <div class="card-footer">
+    <p class="status-text">Muelle de torsión micro-ajustado de alta gama</p>
+  </div>
 </div>

@@ -1,7 +1,7 @@
-<div class="card-reloj sol-theme">
+<div class="card-reloj tema-solar">
   <div class="card-header">
-    <span class="epoca">Edad Antigua (~3500 a.C.)</span>
-    <h3>El Gnomon de Piedra</h3>
+    <span class="epoca" style="color: #b58900; font-weight: bold;">Edad Antigua (~3500 a.C.)</span>
+    <h3 style="color: #333333;">El Gnomon de Piedra</h3>
   </div>
   
   <div class="gnomon-container" [class.noche]="esDeNoche">
@@ -24,7 +24,7 @@
   </div>
   
   <div class="card-footer">
-    <p class="status-text">
+    <p class="status-text" style="color: #555555;">
       {{ esDeNoche ? '🌙 El sol se ha ocultado. El gnomon no proyecta sombra.' : '☀️ Ángulo solar: ' + anguloSombra.toFixed(1) + '°' }}
     </p>
   </div>

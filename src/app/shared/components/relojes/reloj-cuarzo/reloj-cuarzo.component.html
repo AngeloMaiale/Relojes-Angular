@@ -1,24 +1,28 @@
-<div class="card-reloj cuarzo-theme">
+<div class="card-reloj tema-cuarzo">
   <div class="card-header">
     <span class="epoca">Era Digital (~1970 - Act.)</span>
     <h3>Cronómetro de Oscilador de Cuarzo</h3>
   </div>
-  <div class="gabinete-digital">
-    <div class="pantalla-lcd">
-      <div class="brillo-cristal"></div>
-      <div class="indicador-am-pm">{{ hora.getHours() >= 12 ? 'PM' : 'AM' }}</div>
-      
-      <div class="numeros-digitales">
-        <span class="segmento">{{ hora | date:'HH:mm' }}</span>
-        <span class="segundos-pequeños">:{{ hora | date:'ss' }}</span>
-      </div>
-      
-      <div class="panel-fecha">
-        <span>FREQ: 32.768 kHz</span>
-        <span>MONITOR DIGITAL</span>
+
+  <div class="escenario-interno">
+    <div class="gabinete-digital">
+      <div class="pantalla-lcd">
+        <div class="brillo-cristal"></div>
+        <div class="indicador-am-pm">{{ hora.getHours() >= 12 ? 'PM' : 'AM' }}</div>
+        
+        <div class="numeros-digitales">
+          <span class="segmento">{{ hora | date:'HH:mm' }}</span>
+          <span class="segundos-pequeños">:{{ hora | date:'ss' }}</span>
+        </div>
+        
+        <div class="panel-fecha">
+          <span>FREQ: 32.768 kHz</span>
+          <span>MONITOR DIGITAL</span>
+        </div>
       </div>
     </div>
   </div>
+
   <div class="card-footer">
     <p class="status-text">Piezoeléctrico de alta frecuencia</p>
   </div>

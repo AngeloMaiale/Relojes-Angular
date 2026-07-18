@@ -1,18 +1,32 @@
-<div class="card-reloj incienso-theme">
+<div class="card-reloj tema-incienso">
   <div class="card-header">
-    <span class="epoca">Dinastía Song (~Siglo VI)</span>
-    <h3>Senda de Incienso Aromático</h3>
+    <span class="epoca">Edad Media (~Siglo VI d.C.)</span>
+    <h3>Reloj de Incienso Asiático</h3>
   </div>
-  <div class="altar-container">
-    <div class="soporte-madera">
-      <div class="varilla-incienso" [ngStyle]="{'width': (100 - (hora.getMinutes() * 1.66)) + '%'}"></div>
-      <div class="punto-brasa" [ngStyle]="{'left': (100 - (hora.getMinutes() * 1.66)) + '%'}">
-        <div class="humo-sutil"></div>
+
+  <div class="escenario-interno">
+    <div class="quemador-incienso">
+      <div class="soporte-madera"></div>
+      
+      <div class="marcas-horas">
+        <span>I</span><span>II</span><span>III</span><span>IV</span><span>V</span><span>VI</span>
+      </div>
+
+      <div class="zona-combustion">
+        <div class="barra-incienso">
+          <div class="porcion-quemada" [style.width.%]="porcentajeConsumido"></div>
+        </div>
+        
+        <div class="brasa-activa" [style.left.%]="porcentajeConsumido">
+          <div class="humo"></div>
+        </div>
+        
+        <div class="cenizas" [style.width.%]="porcentajeConsumido"></div>
       </div>
     </div>
-    <div class="marcas-oro">
-      <span>⌛ 00m</span><span>⏳ 30m</span><span>⌛ 60m</span>
-    </div>
   </div>
-  <div class="card-footer"><p class="status-text">Combustión controlada por resinas naturales</p></div>
+
+  <div class="card-footer">
+    <p class="status-text">Consumo de resina por combustión constante</p>
+  </div>
 </div>

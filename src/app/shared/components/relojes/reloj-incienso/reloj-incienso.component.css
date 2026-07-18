@@ -1,93 +1,177 @@
 .card-reloj.incienso-theme {
-  background: linear-gradient(145deg, #2c1a1a, #1c1010);
-  border: 1px solid #4a2c2c;
+  background: #1a1512;
   border-radius: 24px;
-  padding: 2rem;
+  padding: 1.5rem;
   width: 420px;
-  text-align: center;
-}
-.altar-container {
-  height: 260px;
-  background: #0f0707;
-  border-radius: 12px;
-  padding: 40px 20px;
   box-sizing: border-box;
+}
+
+.card-header {
+  text-align: center !important;
+  margin-bottom: 25px !important;
+  display: block;
+}
+
+.card-footer {
+  text-align: center !important;
+  margin-top: 25px !important;
+  display: block;
+}
+
+.card-header .epoca {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffaa66;
+  margin-bottom: 2px;
+}
+
+.card-header h3 {
+  margin: 5px 0 0 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.card-footer .status-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8a776a;
+}
+
+.escenario-interno {
+  background: #0a0807;
+  border-radius: 16px;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.soporte-madera {
-  width: 100%;
-  height: 12px;
-  background: #5a3825;
-  border-radius: 4px;
-  position: relative;
-  display: flex;
   align-items: center;
+  min-height: 150px;
 }
 
-.varilla-incienso {
-  height: 6px;
-  background: linear-gradient(to right, #444 0%, #8b7355 20%, #a68b6d 100%);
-  position: absolute;
-  left: 0;
-  border-radius: 3px;
-  transition: width 0.1s linear;
+.quemador-incienso {
+  position: relative;
+  width: 350px;
+  height: 150px;
+  background: linear-gradient(135deg, #2d1e15 0%, #1a110b 100%);
+  border: 4px solid #4a3325;
+  border-radius: 16px;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.8), 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.punto-brasa {
-  width: 10px;
-  height: 10px;
-  background: #ff3300;
-  border-radius: 50%;
+.quemador-incienso::before,
+.quemador-incienso::after {
+  content: '';
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow:
-    0 0 12px #ff4500,
-    0 0 4px #fff;
-  transition: left 0.1s linear;
-  z-index: 10;
-}
-
-.humo-sutil {
-  position: absolute;
-  left: 50%;
-  top: -25px;
+  bottom: 35px;
   width: 6px;
   height: 25px;
-  background: rgba(220, 220, 220, 0.3);
-  filter: blur(2px);
+  background: linear-gradient(to top, #8a640f, #d4af37);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.quemador-incienso::before { left: 25px; }
+.quemador-incienso::after { right: 25px; }
+
+.marcas-horas {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  padding: 0 35px;
+  box-sizing: border-box;
+}
+
+.marcas-horas span {
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  color: #c5a059;
+  font-size: 0.9rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+}
+
+
+.zona-combustion {
+  position: absolute;
+  bottom: 45px;
+  left: 31px;
+  width: calc(100% - 62px);
+  height: 30px;
+}
+
+.barra-incienso {
+  position: absolute;
+  top: 11px;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: linear-gradient(to bottom, #4d3f34, #3a2f26);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  overflow: hidden !important;
+}
+
+.porcion-quemada {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(to right, rgba(50,50,50,0.95), rgba(220,220,220,0.75));
+  border-radius: 4px 0 0 4px;
+}
+
+.brasa-activa {
+  position: absolute;
+  top: 14px;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #ffffff 10%, #ff6a00 50%, #ff1a00 100%);
   border-radius: 50%;
-  animation: flotarHumo 1.5s infinite linear;
+  box-shadow: 0 0 14px #ff3c00, 0 0 6px #ffea00;
+  z-index: 5;
+  animation: pulsoIncienso 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes pulsoIncienso {
+  0% { transform: translate(-50%, -50%) scale(0.9); filter: brightness(1); }
+  100% { transform: translate(-50%, -50%) scale(1.1); filter: brightness(1.3); }
+}
+
+.humo {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 10px);
+  width: 20px;
+  height: 40px;
+  background: radial-gradient(ellipse at bottom, rgba(220,220,220,0.3) 0%, transparent 70%);
+  filter: blur(3px);
+  border-radius: 50%;
+  animation: humoAscendente 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes humoAscendente {
+  0% { transform: translateY(10px) scaleX(0.7) skewX(0deg); opacity: 0; }
+  30% { opacity: 0.5; }
+  100% { transform: translateY(-30px) scaleX(1.8) skewX(15deg); opacity: 0; }
 }
 
 .cenizas {
-  height: 4px;
-  background: #444;
   position: absolute;
+  bottom: -15px;
   left: 0;
-  border-radius: 2px;
-}
-.marcas-oro {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-  color: #d4af37;
-  font-family: serif;
-  font-size: 0.85rem;
-}
-@keyframes flotarHumo {
-  0%,
-  100% {
-    transform: translateY(0) scaleX(1);
-    opacity: 0.1;
-  }
-  50% {
-    transform: translateY(-10px) scaleX(1.5);
-    opacity: 0.3;
-  }
-}
-.status-text {
-  color: #a68b6d;
+  height: 4px;
+  background: linear-gradient(to bottom, #8f8479 0%, #5c534a 100%);
+  border-radius: 50% 50% 2px 2px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+  opacity: 0.85;
 }
